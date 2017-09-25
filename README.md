@@ -10,11 +10,11 @@ matched, then most likely they are made by the same driver.
 The question may look easy when we simply visualize the two paths and manually identify the matching parts by bare sight. But 
 this approach becomes inpractical when we are confronted with, say, hundreds or even thousands of trips.
 
-![100 Trips entangled together with all the origin points being (0,0))](image/trip_match_plot1.png)
+![100 Trips entangled together with all the origin points being (0,0))](image/trip_match_plot1.png | width=100)
 
 A path-matching algorithm can help us identify the groups of matched trips.
 
-![Matched trips in 4 groups](image/trip_match_plot2.png)
+![Matched trips in 4 groups](image/trip_match_plot2.png | width=100)
 
 
 ## Two-step algorithm
@@ -25,6 +25,6 @@ The way that we match those trips into groups can be divided into two steps:
 
 1. Simplify the trips into a set of points that best capture the passage information of the trip with the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm), in this way, we shorten the representation of the trips with thousands of points into a set of usually less than 50 points. See the example below.
 
-![Example of RDP algorithm applied to a trip with thousand of points](image/RDP_slow.gif)
+![Example of RDP algorithm applied to a trip with thousand of points](image/RDP_slow.gif | width=20)
 
 2. We find the matched pairs in the simplified trips with certain cutoffs in distances and angle of each pair of adjacent points. 
