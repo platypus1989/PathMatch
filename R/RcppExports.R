@@ -11,7 +11,7 @@
 #'colSds(matrix(1:4,nrow=2))
 #' @export
 colSds <- function(X, norm_type = 0L) {
-    .Call('PathMatch_colSds', PACKAGE = 'PathMatch', X, norm_type)
+    .Call('_PathMatch_colSds', PACKAGE = 'PathMatch', X, norm_type)
 }
 
 #' Rowwise standard deviations.
@@ -24,7 +24,7 @@ colSds <- function(X, norm_type = 0L) {
 #'rowSds(matrix(1:4,nrow=2))
 #' @export
 rowSds <- function(X, norm_type = 0L) {
-    .Call('PathMatch_rowSds', PACKAGE = 'PathMatch', X, norm_type)
+    .Call('_PathMatch_rowSds', PACKAGE = 'PathMatch', X, norm_type)
 }
 
 #' Distance from a point to a line linked by two other points C++ version.
@@ -38,7 +38,7 @@ rowSds <- function(X, norm_type = 0L) {
 #'dist2dCPP(c(1,1),c(0,0),c(0,1))
 #' @export
 dist2dCPP <- function(a, b, c) {
-    .Call('PathMatch_dist2dCPP', PACKAGE = 'PathMatch', a, b, c)
+    .Call('_PathMatch_dist2dCPP', PACKAGE = 'PathMatch', a, b, c)
 }
 
 #' Ramer–Douglas–Peucker algorithm C++ version.
@@ -57,7 +57,7 @@ dist2dCPP <- function(a, b, c) {
 #'
 #' @export
 RDPCPP <- function(points, epsilon) {
-    .Call('PathMatch_RDPCPP', PACKAGE = 'PathMatch', points, epsilon)
+    .Call('_PathMatch_RDPCPP', PACKAGE = 'PathMatch', points, epsilon)
 }
 
 #' Total number of sign changes in a logical vector.
@@ -69,7 +69,7 @@ RDPCPP <- function(points, epsilon) {
 #'sign_change(c(TRUE,FALSE,TRUE,TRUE))
 #' @export
 sign_change <- function(signs) {
-    .Call('PathMatch_sign_change', PACKAGE = 'PathMatch', signs)
+    .Call('_PathMatch_sign_change', PACKAGE = 'PathMatch', signs)
 }
 
 #' Total number of number changes in a numeric vector.
@@ -81,7 +81,7 @@ sign_change <- function(signs) {
 #'number_change(c(1,1,1,2,2,3,3,5))
 #' @export
 number_change <- function(numbers) {
-    .Call('PathMatch_number_change', PACKAGE = 'PathMatch', numbers)
+    .Call('_PathMatch_number_change', PACKAGE = 'PathMatch', numbers)
 }
 
 #' Fixing the bearing changes close to 360 or -360.
@@ -93,7 +93,7 @@ number_change <- function(numbers) {
 #'bearing_change_fix_cpp(c(1,30,90,190,259,350))
 #' @export
 bearing_change_fix_cpp <- function(bearing_change) {
-    .Call('PathMatch_bearing_change_fix_cpp', PACKAGE = 'PathMatch', bearing_change)
+    .Call('_PathMatch_bearing_change_fix_cpp', PACKAGE = 'PathMatch', bearing_change)
 }
 
 #' trip match algorithm that calculate matching distances.
@@ -107,6 +107,6 @@ bearing_change_fix_cpp <- function(bearing_change) {
 #'
 #' @export
 trip_match_cpp <- function(M1, M2, dist_cut = 0.0001, heading_cut = 0.005) {
-    .Call('PathMatch_trip_match_cpp', PACKAGE = 'PathMatch', M1, M2, dist_cut, heading_cut)
+    .Call('_PathMatch_trip_match_cpp', PACKAGE = 'PathMatch', M1, M2, dist_cut, heading_cut)
 }
 

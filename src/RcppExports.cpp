@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // colSds
 arma::rowvec colSds(const arma::mat X, const int norm_type);
-RcppExport SEXP PathMatch_colSds(SEXP XSEXP, SEXP norm_typeSEXP) {
+RcppExport SEXP _PathMatch_colSds(SEXP XSEXP, SEXP norm_typeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ END_RCPP
 }
 // rowSds
 arma::colvec rowSds(const arma::mat X, const int norm_type);
-RcppExport SEXP PathMatch_rowSds(SEXP XSEXP, SEXP norm_typeSEXP) {
+RcppExport SEXP _PathMatch_rowSds(SEXP XSEXP, SEXP norm_typeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -32,7 +32,7 @@ END_RCPP
 }
 // dist2dCPP
 double dist2dCPP(arma::rowvec a, arma::rowvec b, arma::rowvec c);
-RcppExport SEXP PathMatch_dist2dCPP(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP) {
+RcppExport SEXP _PathMatch_dist2dCPP(SEXP aSEXP, SEXP bSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -45,7 +45,7 @@ END_RCPP
 }
 // RDPCPP
 arma::mat RDPCPP(arma::mat points, double epsilon);
-RcppExport SEXP PathMatch_RDPCPP(SEXP pointsSEXP, SEXP epsilonSEXP) {
+RcppExport SEXP _PathMatch_RDPCPP(SEXP pointsSEXP, SEXP epsilonSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -57,7 +57,7 @@ END_RCPP
 }
 // sign_change
 int sign_change(Rcpp::LogicalVector signs);
-RcppExport SEXP PathMatch_sign_change(SEXP signsSEXP) {
+RcppExport SEXP _PathMatch_sign_change(SEXP signsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -68,7 +68,7 @@ END_RCPP
 }
 // number_change
 int number_change(Rcpp::NumericVector numbers);
-RcppExport SEXP PathMatch_number_change(SEXP numbersSEXP) {
+RcppExport SEXP _PathMatch_number_change(SEXP numbersSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -79,7 +79,7 @@ END_RCPP
 }
 // bearing_change_fix_cpp
 Rcpp::NumericVector bearing_change_fix_cpp(Rcpp::NumericVector bearing_change);
-RcppExport SEXP PathMatch_bearing_change_fix_cpp(SEXP bearing_changeSEXP) {
+RcppExport SEXP _PathMatch_bearing_change_fix_cpp(SEXP bearing_changeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -90,7 +90,7 @@ END_RCPP
 }
 // trip_match_cpp
 Rcpp::NumericVector trip_match_cpp(arma::mat M1, arma::mat M2, double dist_cut, double heading_cut);
-RcppExport SEXP PathMatch_trip_match_cpp(SEXP M1SEXP, SEXP M2SEXP, SEXP dist_cutSEXP, SEXP heading_cutSEXP) {
+RcppExport SEXP _PathMatch_trip_match_cpp(SEXP M1SEXP, SEXP M2SEXP, SEXP dist_cutSEXP, SEXP heading_cutSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -104,14 +104,14 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"PathMatch_colSds", (DL_FUNC) &PathMatch_colSds, 2},
-    {"PathMatch_rowSds", (DL_FUNC) &PathMatch_rowSds, 2},
-    {"PathMatch_dist2dCPP", (DL_FUNC) &PathMatch_dist2dCPP, 3},
-    {"PathMatch_RDPCPP", (DL_FUNC) &PathMatch_RDPCPP, 2},
-    {"PathMatch_sign_change", (DL_FUNC) &PathMatch_sign_change, 1},
-    {"PathMatch_number_change", (DL_FUNC) &PathMatch_number_change, 1},
-    {"PathMatch_bearing_change_fix_cpp", (DL_FUNC) &PathMatch_bearing_change_fix_cpp, 1},
-    {"PathMatch_trip_match_cpp", (DL_FUNC) &PathMatch_trip_match_cpp, 4},
+    {"_PathMatch_colSds", (DL_FUNC) &_PathMatch_colSds, 2},
+    {"_PathMatch_rowSds", (DL_FUNC) &_PathMatch_rowSds, 2},
+    {"_PathMatch_dist2dCPP", (DL_FUNC) &_PathMatch_dist2dCPP, 3},
+    {"_PathMatch_RDPCPP", (DL_FUNC) &_PathMatch_RDPCPP, 2},
+    {"_PathMatch_sign_change", (DL_FUNC) &_PathMatch_sign_change, 1},
+    {"_PathMatch_number_change", (DL_FUNC) &_PathMatch_number_change, 1},
+    {"_PathMatch_bearing_change_fix_cpp", (DL_FUNC) &_PathMatch_bearing_change_fix_cpp, 1},
+    {"_PathMatch_trip_match_cpp", (DL_FUNC) &_PathMatch_trip_match_cpp, 4},
     {NULL, NULL, 0}
 };
 

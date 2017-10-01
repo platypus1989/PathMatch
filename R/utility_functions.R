@@ -142,6 +142,40 @@ RDP <- function(points,epsilon){
   return(results)
 }
 
+
+#' Generate polypon points for Ramer–Douglas–Peucker algorithm visualization.
+#'
+#' @param pt1 .
+#' @param pt2 .
+#' @param dist .
+#' @return a matrix with dimension 4*2 denoting the 4 vertices of the polygon.
+#' @examples
+#' library(ggplot2)
+#' point_set <- rbind(c(0,0),c(2,2))
+#' GeneratePolygon(point_set[1,],point_set[2,])
+#' df <- data.frame(t(GeneratePolygon(point_set[1,],point_set[2,],dist=0.2)))
+#' ggplot(df,aes(X1,X2)) + geom_polygon(fill='lightblue',alpha=0.5)
+
+#' @export
+GeneratePolygon <- function(pt1,pt2,dist = 1){
+  
+  V <- (pt2 + pt1)/2
+  theta <- atan((pt2[2]-pt1[2])/(pt2[1]-pt1[1]))
+  cos_theta <- cos(theta)
+  sin_theta <- sin(theta)
+  V_len <- sqrt(sum((pt2-pt1)^2))
+  Poly_points <- matrix(c(-V_len/2,-V_len/2,V_len/2,V_len/2,-dist,dist,dist,-dist),nrow=2,byrow=TRUE)
+  
+  # step 1
+  transform_M <- matrix(c(cos_theta, -sin_theta, sin_theta, cos_theta),nrow=2,byrow=TRUE)
+  Poly_points <- transform_M %*% Poly_points
+  
+  # step 2
+  Poly_points <- Poly_points + matrix(V,nrow=2,ncol=4,byrow=FALSE) 
+  
+  return(Poly_points)
+}
+
 #' trip matching algorithm R version 1.
 #'
 #' @param M1 .

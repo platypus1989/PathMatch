@@ -24,6 +24,6 @@ The way that we match those trips into groups can be divided into two steps:
 
 1. Simplify the trips into a set of points that best capture the passage information of the trip with the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm), in this way, we shorten the representation of the trips with thousands of points into a set of usually less than 50 points. See the example below. 
 
-<img src="image/RDP_slow.gif" width="300">
+<img src="image/RDP_process.gif" width="1000">
 
 2. We find the matched pairs in the simplified trips with certain cutoffs in distances and angle of each pair of adjacent points. 
