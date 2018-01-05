@@ -9,6 +9,7 @@ Description: Utility Functions for Path Matching.
 License: CC0
 Encoding: UTF-8
 LazyData: true
+Depends: ggplot2
 Imports: Rcpp (>= 0.12.8), RcppArmadillo
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
