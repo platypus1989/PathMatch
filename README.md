@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/platypus1989/PathMatch.svg?branch=master)](https://travis-ci.org/platypus1989/PathMatch)
+
 # Path Matching
 
 One of interesting problems in graph theory is the matching of two sets of edges and vertices. The generalized problem, 
